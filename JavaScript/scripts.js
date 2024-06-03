@@ -101,3 +101,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+const steps = document.querySelectorAll(".step");
+
+steps.forEach((step) => {
+  step.addEventListener("touchstart", () => {
+    step.classList.add("active");
+  });
+
+  step.addEventListener("touchend", () => {
+    step.classList.remove("active");
+  });
+});
