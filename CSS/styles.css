@@ -73,7 +73,6 @@ body.dark-mode a:hover {
 @media (max-width: 768px) {
   .logo-img {
     width: 150px;
-    border-radius: 50px;
   }
 }
 .nav-links,
