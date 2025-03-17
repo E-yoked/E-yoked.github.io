@@ -1734,23 +1734,7 @@ img {
       }
     });
   };
-// Fade in the partners section when it comes into view
-document.addEventListener('DOMContentLoaded', () => {
-  const partnersSection = document.getElementById('partners');
-  
-  // Create an Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        partnersSection.classList.add('opacity-100');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  
-  // Start observing the section
-  observer.observe(partnersSection);
-});
+
 
   // ===== Animations and Performance =====
   const initSectionAnimations = () => {
@@ -1778,10 +1762,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (partnersSection) {
       const partnersObserver = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
-          partnersSection.classList.add('animate-slideUp');
-          partnersObserver.unobserve(partnersSection);
+          partnersSection.classList.add('opacity-100');
+          partnersObserver.unobserve(entry.target);
         }
-      }, { threshold: 0.1 });
+      }, { threshold: 0.2 });
       partnersObserver.observe(partnersSection);
     }
   };
