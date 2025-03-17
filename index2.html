@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Yoked | Startup Ecosystem Platform | AI-Powered Partnerships</title>
+
+  <!-- Favicon and Touch Icons -->
+  <link rel="icon" type="image/svg+xml" href="images/eyokedicon.svg">
+  <link rel="apple-touch-icon" href="images/eyokedicon.png">
+
+  <!-- SEO & Social -->
+  <meta name="description"
+    content="E-Yoked connects startups, mentors, investors, and institutions through AI-powered partnerships with a 92% match success rate.">
+  <meta name="keywords"
+    content="startup ecosystem, AI matchmaking, investor connections, startup partnerships, innovation platform">
+  <meta property="og:title" content="E-Yoked | AI-Powered Startup Ecosystem">
+  <meta property="og:description"
+    content="Connect with perfect partners in 48 hours: 850+ active partnerships with 92% match success">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preload and External Styles -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Inline Styles with CSS Variables and Component-Specific Rules -->
+<style>
+  /* CSS Variables and Global Styles */
+:root {
+  /* Color palette */
+  --color-primary-blue: #1a365d;
+  --color-secondary-green: #2d5f2e;
+  --color-accent-gold: #ffd700;
+  --color-text-dark: #333333;
+  --color-text-light: #ffffff;
+  --color-border: #e5e7eb;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --font-family-hero: 'Montserrat', sans-serif;
+  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-size-hero-title: clamp(2.5rem, 4vw + 1rem, 4rem);
+  --font-size-hero-subtitle: clamp(1.2rem, 2vw + 0.5rem, 1.5rem);
+  --font-size-section-title: 2rem;
+  --font-size-body: 1rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Animation & Transitions */
+  --transition-duration-fast: 0.3s;
+  --transition-duration-normal: 0.5s;
+  --animation-duration: 0.8s;
+  --animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  
+  /* Effects */
+  --hover-transform-y: translateY(-5px);
+  --hover-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  --card-border-radius: 0.75rem;
+  --button-border-radius: 30px;
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-2px, 0, 0); }
+  40%, 60% { transform: translate3d(2px, 0, 0); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp var(--animation-duration) var(--animation-timing-function) forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-700 { animation-delay: 0.7s; }
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity var(--animation-duration) var(--animation-timing-function),
+    transform var(--animation-duration) var(--animation-timing-function);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--button-border-radius);
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--transition-duration-fast) var(--animation-timing-function),
+    box-shadow var(--transition-duration-fast) var(--animation-timing-function),
+    background-color var(--transition-duration-fast) var(--animation-timing-function);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+  color: var(--color-text-light);
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  transform: var(--hover-transform-y);
+  box-shadow: var(--hover-box-shadow);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-text-light);
+  color: var(--color-text-light);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: var(--color-text-light);
+  color: var(--color-primary-blue);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="rgba(255,255,255,0.05)" fill-rule="evenodd"/%3E%3C/svg%3E');
+  opacity: 0.5;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  padding: var(--spacing-md);
+  max-width: 800px;
+}
+
+.hero-title {
+  font-family: var(--font-family-hero);
+  font-size: var(--font-size-hero-title);
+  font-weight: 900;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-hero-subtitle);
+  font-weight: 400;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0;
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
+  animation-delay: 0.7s;
+}
+
+/* Section Styles */
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  font-size: var(--font-size-section-title);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-description {
+  color: #666;
+  margin-bottom: var(--spacing-lg);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Feature Cards */
+.feature-card {
+  padding: var(--spacing-md);
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-border-radius);
+  text-align: center;
+  transition: transform var(--transition-duration-fast) ease,
+              box-shadow var(--transition-duration-fast) ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px var(--color-shadow);
+}
+
+.feature-icon {
+  margin-bottom: var(--spacing-sm);
+  font-size: 2.5rem;
+  color: var(--color-primary-blue);
+}
+
+.feature-title {
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+.feature-description {
+  color: #666;
+}
+
+/* Stats Section */
+.stats-section {
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+  color: var(--color-text-light);
+  padding: var(--spacing-xl) 0;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: var(--card-border-radius);
+  padding: 1.5rem;
+  transition: transform var(--transition-duration-fast) ease,
+              background-color var(--transition-duration-fast) ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-accent-gold);
+}
+
+.stat-label {
+  font-size: 1.1rem;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+  position: relative;
+  overflow: hidden;
+  padding: var(--spacing-xl) 0;
+}
+
+.testimonial-track {
+  display: flex;
+  animation: scroll 25s linear infinite;
+  width: max-content;
+}
+
+.testimonial-card {
+  width: 350px;
+  padding: var(--spacing-md);
+  margin-right: var(--spacing-md);
+  background-color: white;
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 4px 6px var(--color-shadow);
+  flex-shrink: 0;
+}
+
+.testimonial-content {
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonial-author {
+  font-weight: 700;
+}
+
+.testimonial-position {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Demo Video */
+.demo-video {
+  padding: var(--spacing-lg) 0;
+}
+
+.video-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px -5px var(--color-shadow);
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+}
+
+.aspect-w-16 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+}
+
+.aspect-w-16 iframe,
+.aspect-w-16 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Success Stories */
+.success-stories {
+  background-color: #f9f9f9;
+  padding: var(--spacing-xl) 0;
+}
+
+.success-story {
+  background-color: white;
+  padding: var(--spacing-md);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 1px 3px var(--color-shadow);
+  height: 100%;
+  transition: transform var(--transition-duration-fast) ease,
+              box-shadow var(--transition-duration-fast) ease;
+}
+
+.success-story:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px -3px var(--color-shadow);
+}
+
+.story-company {
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.story-result {
+  color: var(--color-secondary-green);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* CTA Section */
+.cta-section {
+  position: relative;
+  background-color: var(--color-primary-blue);
+  background-image: url('images/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-text-light);
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--color-primary-blue), var(--color-secondary-green));
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-description {
+  margin-bottom: var(--spacing-lg);
+}
+
+.trust-indicators {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.trust-indicator {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.trust-icon {
+  color: var(--color-accent-gold);
+}
+
+/* Contact Section */
+.contact-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-lg);
+}
+
+.contact-info {
+  background-color: var(--color-primary-blue);
+  color: var(--color-text-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--card-border-radius);
+  height: 100%;
+}
+
+.contact-method {
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-method-title {
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-form {
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 4px 6px var(--color-shadow);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+  transition: border-color var(--transition-duration-fast) ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary-blue);
+}
+
+.form-field-error {
+  animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+  border-color: #dc3545;
+}
+
+/* Footer */
+.footer {
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.footer-logo {
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-column-title {
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-light);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-link {
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-link a {
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: color var(--transition-duration-fast) ease;
+}
+
+.footer-link a:hover {
+  color: var(--color-text-light);
+}
+
+.footer-bottom {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.footer-copyright {
+  color: #b0b0b0;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.social-icon {
+  color: #b0b0b0;
+  transition: color var(--transition-duration-fast) ease;
+}
+
+.social-icon:hover {
+  color: var(--color-text-light);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .hero,
+  .cta-section,
+  .footer,
+  .btn {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .contact-info {
+    border: 1px solid #000;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .footer {
+    border-top: 1px solid #000;
+  }
+}
+</style>
+</head>
+
+<body class="bg-gray-50" data-theme="light">
+  <a href="#main-content"></a>
+
+  <!-- Header with Navigation and Mobile Menu -->
+  <header class="fixed w-full bg-white shadow-sm z-50">
+    <div class="container mx-auto px-4">
+      <nav class="py-4 flex justify-between items-center" aria-label="Main Navigation">
+        <div class="flex items-center">
+          <a href="/" aria-label="E-Yoked Home" class="mr-4">
+            <img src="images/eyokedcompact.webp" alt="E-Yoked Logo" class="h-10" loading="lazy">
+          </a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl" aria-label="Open navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="hidden md:flex space-x-6 items-center">
+          <div class="dropdown relative">
+            <button id="solutions-dropdown" class="text-gray-700 hover:text-gray-900 font-medium flex items-center"
+              aria-haspopup="true" aria-expanded="false">
+              Solutions <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </button>
+            <div id="dropdown-menu"
+              class="dropdown-menu absolute hidden mt-2 py-2 w-56 bg-white rounded-lg shadow-xl z-10">
+              <a href="matchmaking.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">AI Matchmaking</a>
+              <a href="collaboration-hub.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Collaboration
+                Hub</a>
+              <a href="resources/marketplace.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Growth Analytics</a>
+            </div>
+          </div>
+          <a href="resource-sharing.html" class="text-gray-700 hover:text-gray-900 font-medium">Resources</a>
+          <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+          <a href="signin.html"
+            class="bg-gray-100 text-gray-800 px-5 py-2 rounded-lg hover:bg-gray-200 font-medium">Sign In</a>
+          <a href="join.html" class="btn-primary px-5 py-2 rounded-lg font-medium">Join Now</a>
+        </div>
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-50" aria-label="Mobile navigation"
+          aria-hidden="true">
+          <div class="h-full flex flex-col p-6">
+            <div class="flex justify-end">
+              <button id="close-menu" class="text-white text-2xl" aria-label="Close navigation menu">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <ul class="flex flex-col space-y-6 mt-8" aria-label="Mobile navigation links">
+              <li><a href="matchmaking.html" class="text-white text-lg">AI Matchmaking</a></li>
+              <li><a href="collaboration-hub.html" class="text-white text-lg">Collaboration Hub</a></li>
+              <li><a href="analytics.html" class="text-white text-lg">Growth Analytics</a></li>
+              <li><a href="#resources" class="text-white text-lg">Resources</a></li>
+              <li><a href="#contact" class="text-white text-lg">Contact</a></li>
+              <li class="mt-4">
+                <a href="signin.html" class="block bg-white text-gray-900 py-3 rounded-lg text-center font-medium">Sign
+                  In</a>
+              </li>
+              <li>
+                <a href="join.html" class="block btn-primary py-3 rounded-lg text-center font-medium">Join Now</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero fade-in-section text-white py-24 md:py-28 relative overflow-hidden">
+      <div class="absolute inset-0 background-element opacity-20"></div>
+      <div class="absolute top-1/4 left-10 squircle -translate-y-1/2 opacity-10"></div>
+      <div class="absolute bottom-1/4 right-10 fractured-glass translate-y-1/2 opacity-10"></div>
+      <div class="absolute top-0 left-1/2 liquid-metal -translate-x-1/2 opacity-5"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-5xl mx-auto text-center hero-content">
+          <h1 class="hero-title text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Uniting Dreams, Doubling Impact
+          </h1>
+          <p class="hero-subtitle text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+            E-Yoked uses AI to connect startups, investors, and mentors to create powerful partnerships.
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center mb-12 md:mb-16">
+            <a href="join.html"
+              class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 shadow-xl text-lg md:text-xl">
+              Start Free Trial
+            </a>
+            <a href="#demo"
+              class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg md:text-xl opacity-80 hover:opacity-100">
+              <i class="fas fa-play-circle mr-2"></i> Watch Demo
+            </a>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 max-w-4xl mx-auto stat-grid">
+            <div class="stat-card">
+              <div class="text-3xl md:text-4xl font-bold mb-2">850+</div>
+              <div class="text-sm md:text-base opacity-90">Active Partnerships</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl md:text-4xl font-bold mb-2">92%</div>
+              <div class="text-sm md:text-base opacity-90">Match Success Rate</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl md:text-4xl font-bold mb-2">48h</div>
+              <div class="text-sm md:text-base opacity-90">Avg. Connection Time</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-3xl md:text-4xl font-bold mb-2">4.8/5</div>
+              <div class="text-sm md:text-base opacity-90">User Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Partners Section -->
+<section id="partners" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Our Trusted Partners</h2>
+    
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 items-center justify-items-center" aria-label="Partner organizations">
+      <li class="partner-item">
+        <img src="images/google-cloud.png"
+             alt="Google Cloud"
+             class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+             loading="lazy"
+             width="240"
+             height="80">
+      </li>
+      <li class="partner-item">
+        <img src="images/Mastercard New-01.png"
+             alt="Mastercard"
+             class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+             loading="lazy"
+             width="240"
+             height="80">
+      </li>
+      <li class="partner-item">
+        <img src="images/Airtel_Africa-Logo.wine.png"
+             alt="Airtel Africa"
+             class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+             loading="lazy"
+             width="240"
+             height="80">
+      </li>
+      <li class="partner-item">
+        <img src="images/african-development-bank-logo-04.png"
+             alt="African Development Bank"
+             class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
+             loading="lazy"
+             width="240"
+             height="80">
+      </li>
+    </ul>
+  </div>
+</section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-white fade-in-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">How E-Yoked Works</h2>
+        <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+          Our AI-powered platform connects you with perfect partners in just three simple steps.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div
+            class="feature-card fade-in-section fade-in-delay-1 p-6 bg-white rounded-xl border border-gray-100 text-center">
+            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-blue-600">1</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Create Profile</h3>
+            <p class="text-gray-600">Tell us about your startup, expertise, or investment focus.</p>
+          </div>
+          <div
+            class="feature-card fade-in-section fade-in-delay-2 p-6 bg-white rounded-xl border border-gray-100 text-center">
+            <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-green-600">2</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">AI Matching</h3>
+            <p class="text-gray-600">Our algorithms find your ideal ecosystem partners.</p>
+          </div>
+          <div
+            class="feature-card fade-in-section fade-in-delay-3 p-6 bg-white rounded-xl border border-gray-100 text-center">
+            <div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-purple-600">3</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Connect & Grow</h3>
+            <p class="text-gray-600">Collaborate using our secure platform tools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="py-20 bg-gray-50 fade-in-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Platform Capabilities</h2>
+        <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+          All the tools you need to find partners and grow together.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="feature-card p-8 bg-white rounded-xl border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="bg-blue-100 p-3 rounded-lg">
+                <i class="fas fa-brain text-2xl text-blue-600"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4">AI Matchmaking</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Our algorithms analyze data to connect complementary partners with high
+              success rate.</p>
+            <a href="ai-matching.html" class="text-blue-600 font-medium hover:underline flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+          <div class="feature-card p-8 bg-white rounded-xl border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="bg-green-100 p-3 rounded-lg">
+                <i class="fas fa-project-diagram text-2xl text-green-600"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4">Collaboration Suite</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Integrated tools for project management, document sharing, and secure
+              communication.</p>
+            <a href="collaboration.html" class="text-green-600 font-medium hover:underline flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+          <div class="feature-card p-8 bg-white rounded-xl border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="bg-purple-100 p-3 rounded-lg">
+                <i class="fas fa-chart-line text-2xl text-purple-600"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4">Ecosystem Analytics</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Real-time insights on partnership performance, growth metrics, and trends.</p>
+            <a href="analytics.html" class="text-purple-600 font-medium hover:underline flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Slider Section -->
+    <section class="py-20 bg-white fade-in-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16">What Our Members Say</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial-track">
+            <div class="p-6 mx-4 bg-gray-50 rounded-xl shadow-sm min-w-[350px]">
+              <div class="flex items-center mb-4">
+                <div class="text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="ml-2 text-gray-600">5.0</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                "Found our perfect technical partner in 48 hours through E-Yoked's matching system. The collaboration
+                tools made integration seamless."
+              </p>
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center">
+                  <span class="text-blue-700 font-bold">SJ</span>
+                </div>
+                <div class="ml-3">
+                  <div class="font-semibold">Sarah Johnson</div>
+                  <div class="text-sm text-gray-600">CEO, TechStart Innovations</div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 mx-4 bg-gray-50 rounded-xl shadow-sm min-w-[350px]">
+              <div class="flex items-center mb-4">
+                <div class="text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="ml-2 text-gray-600">5.0</span>
+              </div>
+              <p class="text-gray-700 mb-6">
+                "E-Yoked's ecosystem helped us secure seed funding within 3 months. Their AI matching algorithm
+                connected us with investors who perfectly aligned with our vision."
+              </p>
+              <div class="flex items-center">
+                <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center">
+                  <span class="text-green-700 font-bold">MK</span>
+                </div>
+                <div class="ml-3">
+                  <div class="font-semibold">Michael Klein</div>
+                  <div class="text-sm text-gray-600">Founder, GreenTech Solutions</div>
+                </div>
+              </div>
+            </div>
+            <!-- Additional testimonials could be added here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecosystem Network Section -->
+    <section class="py-20 bg-gray-50 fade-in-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Our Ecosystem Includes</h2>
+        <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+          Join a diverse community of innovators ready to collaborate.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="feature-card p-8 bg-white rounded-xl border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="bg-blue-100 p-3 rounded-lg">
+                <i class="fas fa-rocket text-2xl text-blue-600"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4">Startups</h3>
+            </div>
+            <ul class="text-gray-600 mb-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Find technical co-founders</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Access smart capital</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Get startup mentorship</span>
+              </li>
+            </ul>
+            <a href="startups.html" class="text-blue-600 font-medium hover:underline flex items-center">
+              Join as Startup <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+
+          <div class="feature-card p-8 bg-white rounded-xl border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="bg-green-100 p-3 rounded-lg">
+                <i class="fas fa-hand-holding-usd text-2xl text-green-600"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4">Investors</h3>
+            </div>
+            <ul class="text-gray-600 mb-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Discover vetted startups</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Find co-investment opportunities</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Track portfolio performance</span>
+              </li>
+            </ul>
+            <a href="investors.html" class="text-green-600 font-medium hover:underline flex items-center">
+              Join as Investor <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+
+          <div class="feature-card p-8 bg-white rounded-xl border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="bg-purple-100 p-3 rounded-lg">
+                <i class="fas fa-university text-2xl text-purple-600"></i>
+              </div>
+              <h3 class="text-xl font-semibold ml-4">Institutions</h3>
+            </div>
+            <ul class="text-gray-600 mb-6 space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Connect research with industry</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Support innovation programs</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Track economic impact</span>
+              </li>
+            </ul>
+            <a href="institutions.html" class="text-purple-600 font-medium hover:underline flex items-center">
+              Join as Institution <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Video Section -->
+<section id="demo" class="py-12 bg-white">
+  <!-- Use a narrower container instead of Tailwind's default .container -->
+  <div class="max-w-2xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-center mb-6">See E-Yoked in Action</h2>
+    <div class="relative aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-md mx-auto max-w-md">
+      <!-- Thumbnail Image -->
+      <img
+        src="images/Collaboration.jpg"
+        alt="E-Yoked Demo Video Thumbnail"
+        class="w-full h-full object-cover object-center"
+      />
+      <!-- Play Button Overlay -->
+      <div class="absolute inset-0 flex flex-col items-center justify-center">
+        <div
+          class="h-16 w-16 bg-blue-600 bg-opacity-70 rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-700 transition-colors duration-200"
+        >
+          <i class="fas fa-play text-xl text-white"></i>
+        </div>
+        <p class="text-sm text-gray-500 mt-2">Click to play demo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Success Stories Section -->
+    <section class="py-20 bg-gray-50 fade-in-section">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Success Stories</h2>
+        <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+          Real results from our ecosystem members.
+        </p>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="case-study bg-white p-8 rounded-xl shadow-sm">
+            <h3 class="text-2xl font-semibold mb-6">HealthTech Expansion</h3>
+            <p class="text-gray-600 mb-6">
+              MediScan connected with three technical partners through E-Yoked, accelerating their market entry by 4
+              months and securing $2.5M in funding.
+            </p>
+            <div class="flex items-center">
+              <img src="images/mediscan.svg" alt="MediScan case study" class="w-16 h-16 rounded-full object-cover">
+              <div class="ml-4">
+                <div class="font-semibold">Read the full case study</div>
+                <a href="case-studies/mediscan.html" class="text-blue-600 text-sm hover:underline">View details
+                  &rarr;</a>
+              </div>
+            </div>
+          </div>
+          <div class="success-story text-white p-8 rounded-xl shadow-sm"
+            style="background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));">
+            <h3 class="text-2xl font-semibold mb-6">Featured Success</h3>
+            <blockquote class="mb-6 text-lg italic">
+              "E-Yoked's AI matching connected us with the perfect technical partner. We integrated our solutions in
+              weeks instead of months, and saw immediate market traction."
+            </blockquote>
+            <div class="flex items-center">
+              <img src="images/Sarah_Johnson.webp" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
+              <div class="ml-3">
+                <div class="font-semibold">Sarah Johnson</div>
+                <div class="text-sm opacity-80">CEO, TechStart Innovations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-24">
+      <div class="container mx-auto px-4 relative z-10">
+        <h2 class="text-4xl text-white font-bold mb-4">Ready to Transform Your Startup Journey?</h2>
+        <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Join hundreds of founders who've accelerated their growth
+          through strategic partnerships.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-6">
+          <a href="join.html"
+            class="bg-white text-blue-900 px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transform hover:-translate-y-1 shadow-lg">
+            Start Free 14-Day Trial
+          </a>
+          <a href="demo.html"
+            class="border-2 border-white text-white px-10 py-4 rounded-lg hover:bg-white hover:text-blue-900 transform hover:-translate-y-1">
+            Schedule Personalized Demo
+          </a>
+        </div>
+        <div class="trust-indicators mt-12 flex flex-wrap justify-center gap-6 items-center">
+          <div class="trust-indicator flex items-center bg-white bg-opacity-10 px-4 py-2 rounded-lg">
+            <i class="fas fa-shield-alt mr-2"></i>
+            <span>No credit card required</span>
+          </div>
+          <div class="trust-indicator flex items-center bg-white bg-opacity-10 px-4 py-2 rounded-lg">
+            <i class="fas fa-check-circle mr-2"></i>
+            <span>Cancel anytime</span>
+          </div>
+          <div class="trust-indicator flex items-center bg-white bg-opacity-10 px-4 py-2 rounded-lg">
+            <i class="fas fa-headset mr-2"></i>
+            <span>24/7 Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-24 bg-gray-50 fade-in-section">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-8">
+          <div class="md:col-span-2 contact-info bg-blue-900 text-white p-8 rounded-l-lg">
+            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+            <p class="mb-8">Have questions about how E-Yoked can help your startup? Our team is ready to assist you.</p>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <i class="fas fa-map-marker-alt text-xl mr-4"></i>
+                <div>
+                  <h3 class="font-semibold mb-1">Location</h3>
+                  <p>123 Innovation Drive, Suite 200<br>Tech Valley, CA 94103</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-envelope text-xl mr-4"></i>
+                <div>
+                  <h3 class="font-semibold mb-1">Email</h3>
+                  <p>hello@eyoked.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <i class="fas fa-phone text-xl mr-4"></i>
+                <div>
+                  <h3 class="font-semibold mb-1">Phone</h3>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-12">
+              <h3 class="font-semibold mb-4">Follow Us</h3>
+              <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-instagram text-xl"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-3 contact-form bg-white p-8 rounded-r-lg shadow-md">
+            <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+            <form id="contact-form" novalidate>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-gray-700 mb-2">Full Name <span
+                      class="text-red-500">*</span></label>
+                  <input type="text" id="name" name="name"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+                    required minlength="2" pattern="[A-Za-z\s]+">
+                  <div id="name-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 mb-2">Email Address <span
+                      class="text-red-500">*</span></label>
+                  <input type="email" id="email" name="email"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+                    required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                  <div id="email-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                </div>
+              </div>
+              <div class="relative mt-6">
+                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                <select id="subject" name="subject"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 appearance-none">
+                  <option value="">Please select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="demo">Request Demo</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="support">Technical Support</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                  <i class="fas fa-chevron-down text-gray-400"></i>
+                </div>
+              </div>
+              <div class="mt-6">
+                <label for="message" class="block text-gray-700 mb-2">Message <span
+                    class="text-red-500">*</span></label>
+                <textarea id="message" name="message"
+                  class="w-full p-3 border border-gray-300 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-blue-900"
+                  required minlength="10"></textarea>
+                <div id="message-error" class="text-red-500 text-sm mt-1 hidden"></div>
+              </div>
+              <div class="flex items-start mt-6">
+                <input id="privacy" type="checkbox" name="privacy"
+                  class="w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-blue-900" required>
+                <label for="privacy" class="ml-3 text-gray-600 text-sm">
+                  I agree to the <a href="privacy.html" class="text-blue-900 hover:underline">Privacy Policy</a> and
+                  consent to being contacted.
+                </label>
+              </div>
+              <div class="mt-6">
+                <button type="submit"
+                  class="w-full btn-primary px-8 py-4 rounded-lg font-semibold flex items-center justify-center"
+                  disabled>
+                  <span>Send Message</span>
+                  <i class="fas fa-arrow-right ml-2"></i>
+                  <div class="loading-spinner hidden ml-2"></div>
+                </button>
+              </div>
+              <div id="form-success"
+                class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded" role="alert"></div>
+              <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"
+                role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-4">
+          <div class="mb-6">
+            <img src="images/eyokedicon.webp" alt="E-Yoked" class="h-10">
+          </div>
+          <p class="text-gray-400 mb-6">
+            Empowering collaborative innovation by connecting startups, mentors, investors, and institutions through
+            AI-powered partnerships.
+          </p>
+          <div class="flex space-x-4 mb-8">
+            <a href="#"
+              class="bg-gray-800 hover:bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#"
+              class="bg-gray-800 hover:bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+              class="bg-gray-800 hover:bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="bg-gray-800 hover:bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <h3 class="text-lg font-semibold mb-6">Platform</h3>
+          <ul class="space-y-3">
+            <li><a href="features.html" class="text-gray-400 hover:text-white">Features</a></li>
+            <li><a href="security.html" class="text-gray-400 hover:text-white">Security</a></li>
+            <li><a href="pricing.html" class="text-gray-400 hover:text-white">Pricing</a></li>
+            <li><a href="enterprise.html" class="text-gray-400 hover:text-white">Enterprise</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <h3 class="text-lg font-semibold mb-6">Ecosystem</h3>
+          <ul class="space-y-3">
+            <li><a href="startups.html" class="text-gray-400 hover:text-white">For Startups</a></li>
+            <li><a href="investors.html" class="text-gray-400 hover:text-white">For Investors</a></li>
+            <li><a href="mentors.html" class="text-gray-400 hover:text-white">For Mentors</a></li>
+            <li><a href="institutions.html" class="text-gray-400 hover:text-white">For Institutions</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <h3 class="text-lg font-semibold mb-6">Resources</h3>
+          <ul class="space-y-3">
+            <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+            <li><a href="case-studies.html" class="text-gray-400 hover:text-white">Case Studies</a></li>
+            <li><a href="docs.html" class="text-gray-400 hover:text-white">Documentation</a></li>
+            <li><a href="events.html" class="text-gray-400 hover:text-white">Events</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <h3 class="text-lg font-semibold mb-6">Support</h3>
+          <ul class="space-y-3">
+            <li><a href="help-center.html" class="text-gray-400 hover:text-white">Help Center</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+            <li><a href="status.html" class="text-gray-400 hover:text-white">System Status</a></li>
+            <li><a href="faq.html" class="text-gray-400 hover:text-white">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-12 lg:col-span-12 mt-8">
+          <div class="p-6 bg-gray-800 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4">Subscribe to our newsletter</h3>
+            <p class="text-gray-400 mb-4">Get the latest updates on ecosystem partnerships and innovation trends.</p>
+            <form class="flex flex-col sm:flex-row gap-4 newsletter-form" novalidate>
+              <input type="email" placeholder="Enter your email"
+                class="flex-grow p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" required>
+              <button type="submit" class="btn-primary px-6 py-3 rounded-lg whitespace-nowrap">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">&copy; <span id="current-year">2024</span> E-Yoked. All rights reserved.
+        </p>
+        <div class="flex flex-wrap justify-center gap-x-8">
+          <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
+          <a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a>
+          <a href="cookies.html" class="text-gray-400 hover:text-white">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Popper.js for Enhanced Dropdown Positioning -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <!-- JavaScript Organized by Concern -->
+<script>
+ (function () {
+  'use strict';
+
+  // ===== Enhanced Utility Functions =====
+  const domReady = callback => {
+    if (document.readyState !== 'loading') callback();
+    else document.addEventListener('DOMContentLoaded', callback);
+  };
+
+  const isValidEmail = email => 
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const removeErrorMessages = form => {
+    form.querySelectorAll('.error-message').forEach(msg => msg.remove());
+    form.querySelectorAll('.form-field-error').forEach(field => 
+      field.classList.remove('border-red-500', 'form-field-error')
+    );
+  };
+
+  const showFieldError = (field, message) => {
+    if (!field.parentNode) return;
+    field.classList.add('border-red-500', 'form-field-error');
+    const errorMsg = document.createElement('p');
+    errorMsg.className = 'text-red-500 text-sm mt-1 error-message';
+    errorMsg.textContent = message;
+    field.parentNode.appendChild(errorMsg);
+    field.setAttribute('aria-describedby', `error-${field.id}`);
+  };
+
+  const debounce = (fn, delay = 300) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => fn(...args), delay);
+    };
+  };
+
+  // ===== Robust DOM Initialization =====
+  const setCurrentYear = () => {
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  };
+
+  const initMobileMenu = () => {
+    const selectors = {
+      menuButton: '#mobile-menu-button',
+      menu: '#mobile-menu',
+      closeButton: '#close-menu'
+    };
+
+    const elements = {
+      menuButton: document.querySelector(selectors.menuButton),
+      menu: document.querySelector(selectors.menu),
+      closeButton: document.querySelector(selectors.closeButton)
+    };
+
+    if (!elements.menuButton || !elements.menu || !elements.closeButton) return;
+
+    const toggleMenu = (isOpen) => {
+      elements.menu.classList.toggle('hidden', !isOpen);
+      document.body.classList.toggle('overflow-hidden', isOpen);
+      elements.menuButton.setAttribute('aria-expanded', isOpen);
+      elements.menu.setAttribute('aria-hidden', !isOpen);
+    };
+
+    elements.menuButton.addEventListener('click', () => toggleMenu(true));
+    elements.closeButton.addEventListener('click', () => toggleMenu(false));
+    elements.menu.addEventListener('click', e => e.target === elements.menu && toggleMenu(false));
+    
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !elements.menu.classList.contains('hidden')) {
+        toggleMenu(false);
+      }
+    });
+  };
+
+  const initDropdowns = () => {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      const button = dropdown.querySelector('button[aria-haspopup="true"]');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      if (!button || !menu) return;
+
+      let popperInstance = null;
+      const createPopper = () => {
+        if (window.Popper) {
+          popperInstance = Popper.createPopper(button, menu, {
+            placement: 'bottom-start',
+            modifiers: [{ name: 'offset', options: { offset: [0, 8] } }]
+          });
+        }
+      };
+
+      const toggleMenu = () => {
+        const isVisible = menu.style.display === 'block';
+        menu.style.display = isVisible ? 'none' : 'block';
+        button.setAttribute('aria-expanded', !isVisible);
+        if (!isVisible) createPopper();
+      };
+
+      button.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      document.addEventListener('click', () => {
+        if (menu.style.display === 'block') toggleMenu();
+      });
+    });
+  };
+
+  const initSmoothScroll = () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.hash);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          history.replaceState(null, null, this.hash);
+        }
+      });
+    });
+  };
+
+  // ===== Interactive Components =====
+  const initHeroSection = () => {
+    const hero = {
+      button: document.querySelector('.hero-button'),
+      title: document.querySelector('.hero-title'),
+      subtitle: document.querySelector('.hero-subtitle')
+    };
+
+    if (hero.button) {
+      hero.button.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector('#demo')?.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    if (hero.title) {
+      const originalColor = getComputedStyle(hero.title).color;
+      hero.title.addEventListener('mouseenter', () => 
+        hero.title.style.color = 'var(--color-accent-gold)');
+      hero.title.addEventListener('mouseleave', () => 
+        hero.title.style.color = originalColor);
+    }
+
+    if (hero.subtitle) {
+      const updateOpacity = debounce(() => {
+        hero.subtitle.style.opacity = window.scrollY > 100 ? '0.7' : '1';
+      }, 100);
+      window.addEventListener('scroll', updateOpacity);
+    }
+  };
+
+  const initContactForm = () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const state = {
+      submitButton: form.querySelector('button[type="submit"]'),
+      spinner: form.querySelector('.loading-spinner'),
+      fields: form.querySelectorAll('input, textarea')
+    };
+
+    const validateField = field => {
+      const errorId = `${field.id}-error`;
+      let errorMessage = '';
+      let isValid = true;
+
+      if (!field.value.trim()) {
+        errorMessage = `${field.labels?.[0]?.textContent.replace('*', '').trim() || 'This field'} is required`;
+        isValid = false;
+      } else if (field.type === 'email' && !isValidEmail(field.value)) {
+        errorMessage = 'Please enter a valid email address';
+        isValid = false;
+      }
+
+      document.getElementById(errorId).textContent = errorMessage;
+      field.classList.toggle('border-red-500', !isValid);
+      field.setAttribute('aria-invalid', !isValid);
+      return isValid;
+    };
+
+    const handleSubmit = async e => {
+      e.preventDefault();
+      removeErrorMessages(form);
+
+      const isValidForm = Array.from(state.fields).every(field => {
+        const isValid = validateField(field);
+        if (!isValid) showFieldError(field, document.getElementById(`${field.id}-error`).textContent);
+        return isValid;
+      });
+
+      if (!isValidForm) return;
+
+      try {
+        state.submitButton.disabled = true;
+        state.spinner.classList.remove('hidden');
+
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form)))
+        });
+
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        alert('Thank you! We will contact you soon.');
+        form.reset();
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('Sorry, something went wrong. Please try again later.');
+      } finally {
+        state.submitButton.disabled = false;
+        state.spinner.classList.add('hidden');
+      }
+    };
+
+    state.fields.forEach(field => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => {
+        field.classList.remove('border-red-500');
+        validateField(field);
+      });
+    });
+
+    form.addEventListener('submit', handleSubmit);
+  };
+
+  const initNewsletterForm = () => {
+    const form = document.querySelector('.newsletter-form');
+    if (!form) return;
+
+    const emailField = form.querySelector('input[type="email"]');
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!isValidEmail(emailField.value)) return;
+
+      const originalHTML = submitButton.innerHTML;
+      submitButton.innerHTML = '<div class="loading-spinner mr-2"></div>Subscribing...';
+      submitButton.disabled = true;
+
+      try {
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Subscribed!';
+        submitButton.classList.add('bg-green-500');
+        form.reset();
+      } catch (error) {
+        submitButton.innerHTML = originalHTML;
+        console.error('Subscription error:', error);
+      } finally {
+        setTimeout(() => {
+          submitButton.innerHTML = originalHTML;
+          submitButton.classList.remove('bg-green-500');
+          submitButton.disabled = false;
+        }, 3000);
+      }
+    });
+  };
+// Fade in the partners section when it comes into view
+document.addEventListener('DOMContentLoaded', () => {
+  const partnersSection = document.getElementById('partners');
+  
+  // Create an Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        partnersSection.classList.add('opacity-100');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  // Start observing the section
+  observer.observe(partnersSection);
+});
+
+  // ===== Animations and Performance =====
+  const initSectionAnimations = () => {
+    const animateOnIntersect = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(animateOnIntersect, {
+      rootMargin: '0px',
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.scroll-reveal, .fade-in-section').forEach(el => {
+      if (el.classList.contains('animate__animated')) return;
+      observer.observe(el);
+    });
+
+    // Partners section animation
+    const partnersSection = document.getElementById('partners');
+    if (partnersSection) {
+      const partnersObserver = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          partnersSection.classList.add('animate-slideUp');
+          partnersObserver.unobserve(partnersSection);
+        }
+      }, { threshold: 0.1 });
+      partnersObserver.observe(partnersSection);
+    }
+  };
+
+  const initLazyLoading = () => {
+    if (!('IntersectionObserver' in window)) {
+      console.warn('IntersectionObserver not supported');
+      return;
+    }
+
+    const lazyObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const component = entry.target;
+          import(`./components/${component.dataset.lazy}.js`)
+            .catch(error => console.error('Lazy load error:', error));
+          observer.unobserve(component);
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-lazy]').forEach(lazyObserver.observe);
+  };
+
+  // ===== Initialization =====
+  domReady(() => {
+    setCurrentYear();
+    initMobileMenu();
+    initDropdowns();
+    initSmoothScroll();
+    initHeroSection();
+    initContactForm();
+    initNewsletterForm();
+    initSectionAnimations();
+    initLazyLoading();
+  });
+})(); 
+</script>
+</body>
+
+</html>
