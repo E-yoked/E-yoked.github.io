@@ -7,7 +7,7 @@
   <title>E-Yoked | Startup Ecosystem Platform | AI-Powered Partnerships</title>
 
   <!-- Favicon and Touch Icons -->
-  <link rel="icon" type="image/svg+xml" href="Images/eyokedicon.svg">
+  <link rel="icon" type="image/svg+xml" href="Images/eyokedicon.svg" onerror="this.onerror=null; this.href='Images/eyokedicon.png'">
   <link rel="apple-touch-icon" href="Images/eyokedicon.png">
 
   <!-- SEO & Social -->
@@ -18,7 +18,7 @@
   <meta property="og:title" content="E-Yoked | AI-Powered Startup Ecosystem">
   <meta property="og:description"
     content="Connect with perfect partners in 48 hours: 850+ active partnerships with 92% match success">
-  <meta property="og:image" content="/Images/og-image.jpg">
+  <meta property="og:image" content="Images/og-image.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -67,6 +67,10 @@
   --hover-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   --card-border-radius: 0.75rem;
   --button-border-radius: 30px;
+
+  /* Add RGB values for the colors */
+  --color-primary-blue-rgb: 26, 54, 93;
+  --color-secondary-green-rgb: 45, 95, 46;
 }
 
 /* Reset and Base Styles */
@@ -220,7 +224,7 @@ img {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity var(--animation-duration) var(--animation-timing-function),
-    transform var(--animation-duration) var(--animation-timing-function);
+    transform var(--animation-duration) var (--animation-timing-function);
   will-change: opacity, transform;
 }
 
@@ -257,7 +261,7 @@ img {
 .btn-secondary {
   background-color: transparent;
   border: 2px solid var(--color-text-light);
-  color: var(--color-text-light);
+  color: var (--color-text-light);
 }
 
 .btn-secondary:hover, .btn-secondary:focus {
@@ -286,6 +290,14 @@ img {
   bottom: 0;
   background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="rgba(255,255,255,0.05)" fill-rule="evenodd"/%3E%3C/svg%3E');
   opacity: 0.5;
+  z-index: 1; /* Add z-index */
+  pointer-events: none; /* Ensure clicks go through */
+  background-repeat: repeat; /* Ensure pattern repeats */
+}
+
+/* Debug outline to see if pseudo-element is rendering */
+.hero::before {
+  outline: 2px solid red;
 }
 
 .hero-content {
@@ -293,6 +305,7 @@ img {
   z-index: 2;
   padding: var(--spacing-md);
   max-width: 800px;
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
 }
 
 .hero-title {
@@ -309,7 +322,7 @@ img {
 .hero-subtitle {
   font-size: var(--font-size-hero-subtitle);
   font-weight: 400;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var (--spacing-lg);
   opacity: 0;
   animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
   animation-delay: 0.5s;
@@ -323,6 +336,12 @@ img {
   opacity: 0;
   animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
   animation-delay: 0.7s;
+}
+
+/* Enhanced dynamic background */
+.background-element {
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+  animation: gradientFlow 8s linear infinite;
 }
 
 /* Section Styles */
@@ -361,6 +380,7 @@ img {
 .feature-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px -5px var(--color-shadow);
+  background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
 }
 
 .feature-icon {
@@ -380,7 +400,7 @@ img {
 
 /* Stats Section */
 .stats-section {
-  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+  background: linear-gradient(135deg, var(--color-primary-blue), var (--color-secondary-green));
   color: var(--color-text-light);
   padding: var(--spacing-xl) 0;
 }
@@ -397,6 +417,7 @@ img {
 .stat-card:hover {
   transform: translateY(-3px);
   background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 .stat-number {
@@ -485,7 +506,7 @@ img {
 .success-story {
   background-color: white;
   padding: var(--spacing-md);
-  border-radius: var(--card-border-radius);
+  border-radius: var (--card-border-radius);
   box-shadow: 0 1px 3px var(--color-shadow);
   height: 100%;
   transition: transform var(--transition-duration-fast) ease,
@@ -499,7 +520,7 @@ img {
 
 .story-company {
   font-weight: 700;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var (--spacing-xs);
 }
 
 .story-result {
@@ -512,7 +533,7 @@ img {
 .cta-section {
   position: relative;
   background-color: var(--color-primary-blue);
-  background-image: url('Images/background-image.jpg');
+  background-image: url('src/assets/images/background-image.jpg');
   background-size: cover;
   background-position: center;
   color: var(--color-text-light);
@@ -649,7 +670,7 @@ img {
 
 .footer-column-title {
   font-weight: 700;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var (--spacing-md);
   color: var(--color-text-light);
 }
 
@@ -715,24 +736,73 @@ img {
     padding: var(--spacing-lg) 0;
   }
   
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-  
+  /* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="rgba(255,255,255,0.05)" fill-rule="evenodd"/%3E%3C/svg%3E');
+  opacity: 0.5;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  padding: var(--spacing-md);
+  max-width: 800px;
+}
+
+.hero-title {
+  font-family: var(--font-family-hero);
+  font-size: var(--font-size-hero-title);
+  font-weight: 900;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-hero-subtitle);
+  font-weight: 400;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0;
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeInUp var(--animation-duration) var(--animation-timing-function) 0.7s forwards;
+}
+
   .grid-cols-2,
   .grid-cols-3 {
     grid-template-columns: 1fr;
   }
   
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
+
   .btn {
     width: 100%;
     max-width: 300px;
@@ -768,6 +838,403 @@ img {
     border-top: 1px solid #000;
   }
 }
+
+/* Enhanced Animations */
+.animate-gradient {
+  background: linear-gradient(120deg, var(--color-primary-blue), var(--color-secondary-green));
+  background-size: 200% 200%;
+  animation: gradientFlow 8s linear infinite;
+}
+
+.animate-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-reveal-delay {
+  animation-delay: 0.2s;
+}
+
+.animate-reveal-delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Components */
+.cta-primary {
+  background-color: #fff;
+  color: #374151;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transform: translateY(0);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.cta-secondary {
+  border-width: 2px;
+  border-color: #fff;
+  color: #fff;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.feature-card {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-color: #f3f4f6;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transform: translateY(0);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #3b82f6, #16a34a);
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* Enhanced hover states */
+.group:hover .group-hover\:transform {
+  transform: translateY(-5px);
+}
+
+/* Improved focus states for accessibility */
+:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+/* Improved focus states for accessibility */
+:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Enhanced Background Elements */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.background-element {
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  opacity: 0.9;
+}
+
+.bg-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+  animation: float 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(0);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.squircle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(3px);
+  transform: translate(-30%, -30%) rotate(-15deg);
+  animation: floatSquircle 20s ease-in-out infinite;
+  z-index: 1;
+}
+
+.fractured-glass {
+  position: absolute;
+  right: -5%;
+  top: 20%;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(-45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  filter: blur(2px);
+  animation: rotateFractured 30s linear infinite;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.liquid-metal {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+  filter: blur(15px);
+  animation: pulseLiquid 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes floatSquircle {
+  0%, 100% { transform: translate(-30%, -30%) rotate(-15deg); }
+  50% { transform: translate(-25%, -35%) rotate(-5deg); }
+}
+
+@keyframes rotateFractured {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes pulseLiquid {
+  0%, 100% { transform: translate(-50%, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -20px) scale(1.1); opacity: 0.8; }
+}
+
+/* Enhance the hero content visibility */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Add hover effects for interactive elements */
+.hero-title:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transition: text-shadow 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Find the header styles and update them */
+header {
+  background-color: rgba(255, 255, 255, 0.98) !important; /* Increased opacity */
+  backdrop-filter: blur(8px);
+}
+
+/* Add this class for scrolled state */
+.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Update mobile menu background */
+#mobile-menu {
+  background-color: rgba(17, 24, 39, 0.98) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Add these styles to your CSS */
+.rotating-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.rotating-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(var(--color-primary-blue-rgb), 0.03) 0%,
+    rgba(var(--color-secondary-green-rgb), 0.03) 100%
+  );
+  animation: rotateBackground 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply to specific sections except hero */
+section:not(.hero) {
+  position: relative;
+}
+
+/* Ensure content stays above rotating background */
+section:not(.hero) > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Disable rotation on mobile for performance */
+@media (max-width: 768px) {
+  .rotating-bg::before {
+    animation: none;
+  }
+}
+
+/* Update header styles for better contrast */
+header {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Enhanced header scroll state */
+.header-scrolled {
+  background-color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Enhanced mobile menu contrast */
+#mobile-menu {
+  background-color: rgba(17, 24, 39, 0.98) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#mobile-menu a {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+#mobile-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+}
+
+#mobile-menu .close-button {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Navigation link contrast improvements */
+.nav-link {
+  color: #1a202c !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #2563eb !important;
+}
+
+/* Dropdown menu contrast enhancement */
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile navigation link contrast */
+#mobile-menu a {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove rotating background from hero only */
+section.hero {
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));
+}
+
+section.hero.rotating-bg::before {
+  display: none;
+}
+
+/* Keep rotating background for other sections */
+section:not(.hero).rotating-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(var(--color-primary-blue-rgb), 0.03) 0%,
+    rgba(var(--color-secondary-green-rgb), 0.03) 100%
+  );
+  animation: rotateBackground 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
 </style>
 </head>
 
@@ -775,46 +1242,82 @@ img {
   <a href="#main-content"></a>
 
   <!-- Header with Navigation and Mobile Menu -->
-  <header class="fixed w-full bg-white shadow-sm z-50">
+  <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
     <div class="container mx-auto px-4">
-      <nav class="py-4 flex justify-between items-center" aria-label="Main Navigation">
+      <nav class="py-3 flex justify-between items-center" aria-label="Main Navigation">
         <div class="flex items-center">
-          <a href="/" aria-label="E-Yoked Home" class="mr-4">
-            <img src="Images/eyokedcompact.webp" alt="E-Yoked Logo" class="h-10" loading="lazy">
+          <a href="/" aria-label="E-Yoked Home" class="mr-4 transition-transform hover:scale-105">
+            <img 
+              src="Images/eyokedcompact.webp" 
+              alt="E-Yoked Logo" 
+              class="h-10" 
+              loading="lazy"
+              width="120"
+              height="40"
+              fetchpriority="high"
+              onerror="this.onerror=null; this.src='Images/eyokedcompact.png'"
+              onload="this.classList.add('opacity-100')"
+              style="opacity: 0; transition: opacity 0.3s ease-in-out;">
           </a>
         </div>
-        <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl" aria-label="Open navigation menu">
-          <i class="fas fa-bars"></i>
+
+        <button 
+          id="mobile-menu-button" 
+          class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500" 
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span class="sr-only">Menu</span>
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
         </button>
-        <div class="hidden md:flex space-x-6 items-center">
-          <div class="dropdown relative">
-            <button id="solutions-dropdown" class="text-gray-700 hover:text-gray-900 font-medium flex items-center"
-              aria-haspopup="true" aria-expanded="false">
-              Solutions <i class="fas fa-chevron-down ml-1 text-xs"></i>
+
+        <div class="hidden md:flex space-x-8 items-center">
+          <div class="relative group">
+            <button 
+              id="solutions-dropdown" 
+              class="nav-link flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium transition-colors"
+              aria-haspopup="true" 
+              aria-expanded="false">
+              <span>Solutions</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
             </button>
-            <div id="dropdown-menu"
-              class="dropdown-menu absolute hidden mt-2 py-2 w-56 bg-white rounded-lg shadow-xl z-10">
-              <a href="matchmaking.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">AI Matchmaking</a>
-              <a href="collaboration-hub.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Collaboration
-                Hub</a>
-              <a href="resources/marketplace.html" class="block px-4 py-2 hover:bg-gray-100 text-gray-700">Growth Analytics</a>
+            <div 
+              class="dropdown-menu absolute hidden mt-2 py-2 w-56 bg-white rounded-lg shadow-xl z-10 transform opacity-0 -translate-y-2 transition-all"
+              role="menu"
+              aria-labelledby="solutions-dropdown">
+              <a href="../../matchmaking.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors" role="menuitem">AI Matchmaking</a>
+              <a href="../../collaboration-hub.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors" role="menuitem">Collaboration Hub</a>
+              <a href="../resources/marketplace.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors" role="menuitem">Growth Analytics</a>
             </div>
           </div>
-          <a href="resource-sharing.html" class="text-gray-700 hover:text-gray-900 font-medium">Resources</a>
-          <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium">Contact</a>
-          <a href="signin.html"
-            class="bg-gray-100 text-gray-800 px-5 py-2 rounded-lg hover:bg-gray-200 font-medium">Sign In</a>
-          <a href="join.html" class="btn-primary px-5 py-2 rounded-lg font-medium">Join Now</a>
+          
+          <a href="resource-sharing.html" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors">Resources</a>
+          <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors">Contact</a>
+          
+          <div class="flex items-center space-x-4">
+            <a href="signin.html" class="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium rounded-lg hover:bg-gray-50 transition-colors">Sign In</a>
+            <a href="join.html" class="btn-primary px-5 py-2 rounded-lg font-medium transform hover:scale-105 transition-all">Join Now</a>
+          </div>
         </div>
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-50" aria-label="Mobile navigation"
-          aria-hidden="true">
+
+        <!-- Mobile Menu Panel -->
+        <div 
+          id="mobile-menu" 
+          class="fixed inset-0 bg-gray-900/98 backdrop-blur-lg z-50 hidden transition-opacity duration-300"
+          aria-hidden="true"
+          role="dialog"
+          aria-modal="true">
           <div class="h-full flex flex-col p-6">
             <div class="flex justify-end">
-              <button id="close-menu" class="text-white text-2xl" aria-label="Close navigation menu">
+              <button id="close-menu" class="close-button text-white text-2xl p-2 hover:bg-white/20 transition-colors" aria-label="Close navigation menu">
                 <i class="fas fa-times"></i>
               </button>
             </div>
-            <ul class="flex flex-col space-y-6 mt-8" aria-label="Mobile navigation links">
+            <ul class="flex flex-col space-y-4 mt-8" aria-label="Mobile navigation links">
               <li><a href="matchmaking.html" class="text-white text-lg">AI Matchmaking</a></li>
               <li><a href="collaboration-hub.html" class="text-white text-lg">Collaboration Hub</a></li>
               <li><a href="analytics.html" class="text-white text-lg">Growth Analytics</a></li>
@@ -836,51 +1339,82 @@ img {
 
   <!-- Main Content -->
   <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero fade-in-section text-white py-24 md:py-28 relative overflow-hidden">
-      <div class="absolute inset-0 background-element opacity-20"></div>
-      <div class="absolute top-1/4 left-10 squircle -translate-y-1/2 opacity-10"></div>
-      <div class="absolute bottom-1/4 right-10 fractured-glass translate-y-1/2 opacity-10"></div>
-      <div class="absolute top-0 left-1/2 liquid-metal -translate-x-1/2 opacity-5"></div>
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-5xl mx-auto text-center hero-content">
-          <h1 class="hero-title text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Uniting Dreams, Doubling Impact
-          </h1>
-          <p class="hero-subtitle text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            E-Yoked uses AI to connect startups, investors, and mentors to create powerful partnerships.
-          </p>
-          <div class="flex flex-col md:flex-row gap-4 justify-center mb-12 md:mb-16">
-            <a href="join.html"
-              class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 shadow-xl text-lg md:text-xl">
-              Start Free Trial
-            </a>
-            <a href="#demo"
-              class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg md:text-xl opacity-80 hover:opacity-100">
-              <i class="fas fa-play-circle mr-2"></i> Watch Demo
-            </a>
+   <!-- Hero Section -->
+<section class="hero fade-in-section text-white py-24 md:py-32 relative overflow-hidden">
+    <!-- Enhanced dynamic background -->
+    <div class="absolute inset-0 background-element animate-gradient"></div>
+    <div class="absolute inset-0 bg-pattern animate-float opacity-20"></div>
+    <div class="absolute top-1/4 left-10 squircle -translate-y-1/2 opacity-10"></div>
+    <div class="absolute bottom-1/4 right-10 fractured-glass translate-y-1/2 opacity-10"></div>
+    <div class="absolute top-0 left-1/2 liquid-metal -translate-x-1/2 opacity-5"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-5xl mx-auto text-center hero-content">
+        <!-- Compelling headline with visual interest -->
+        <h1 class="hero-title text-5xl md:text-7xl font-bold mb-6 leading-tight animate-reveal">
+          Uniting <span class="text-gradient">Dreams</span> Doubling
+          <br class="hidden md:block">
+          Impact
+        </h1>
+        
+        <!-- Clear value proposition -->
+        <p class="hero-subtitle text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 animate-reveal-delay">
+          E-Yoked uses AI to connect African startups, investors, and mentors,
+          <br class="hidden md:block">
+          accelerating growth and tripling success rates.
+        </p>
+        
+        <!-- Strong call-to-action buttons -->
+        <div class="flex flex-col md:flex-row gap-6 justify-center mb-12 md:mb-16 animate-reveal-delay-2">
+          <a href="join.html" class="cta-primary group">
+            <span>Start Free Trial</span>
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="#demo" class="cta-secondary group">
+            <span class="relative z-10"><i class="fas fa-play-circle mr-2"></i>Watch Demo</span>
+            <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-lg transition-opacity"></span>
+          </a>
+        </div>
+        
+        <!-- Animated metrics grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto stat-grid">
+          <div class="stat-card group hover:transform hover:scale-105 transition-all">
+            <div class="text-3xl md:text-4xl font-bold mb-2">
+              <span class="counter" data-target="850">0</span>+
+            </div>
+            <div class="text-sm md:text-base opacity-90">Active Partnerships</div>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 max-w-4xl mx-auto stat-grid">
-            <div class="stat-card">
-              <div class="text-3xl md:text-4xl font-bold mb-2">850+</div>
-              <div class="text-sm md:text-base opacity-90">Active Partnerships</div>
+          <div class="stat-card group hover:transform hover:scale-105 transition-all">
+            <div class="text-3xl md:text-4xl font-bold mb-2">
+              <span class="counter" data-target="92">0</span>%
             </div>
-            <div class="stat-card">
-              <div class="text-3xl md:text-4xl font-bold mb-2">92%</div>
-              <div class="text-sm md:text-base opacity-90">Match Success Rate</div>
+            <div class="text-sm md:text-base opacity-90">Match Success Rate</div>
+          </div>
+          <div class="stat-card group hover:transform hover:scale-105 transition-all">
+            <div class="text-3xl md:text-4xl font-bold mb-2">
+              <span class="counter" data-target="48">0</span>h
             </div>
-            <div class="stat-card">
-              <div class="text-3xl md:text-4xl font-bold mb-2">48h</div>
-              <div class="text-sm md:text-base opacity-90">Avg. Connection Time</div>
+            <div class="text-sm md:text-base opacity-90">Avg. Connection Time</div>
+          </div>
+          <div class="stat-card group hover:transform hover:scale-105 transition-all">
+            <div class="text-3xl md:text-4xl font-bold mb-2">
+              <span class="counter" data-target="4.8">0</span>/5
             </div>
-            <div class="stat-card">
-              <div class="text-3xl md:text-4xl font-bold mb-2">4.8/5</div>
-              <div class="text-sm md:text-base opacity-90">User Satisfaction</div>
-            </div>
+            <div class="text-sm md:text-base opacity-90">User Satisfaction</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
 
 <!-- Partners Section -->
 <section id="partners" class="py-16 bg-gray-50">
@@ -894,7 +1428,8 @@ img {
              class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
              loading="lazy"
              width="240"
-             height="80">
+             height="80"
+             onerror="this.style.display='none'">
       </li>
       <li class="partner-item">
         <img src="Images/Mastercard New-01.png"
@@ -902,7 +1437,8 @@ img {
              class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
              loading="lazy"
              width="240"
-             height="80">
+             height="80"
+             onerror="this.style.display='none'">
       </li>
       <li class="partner-item">
         <img src="Images/Airtel_Africa-Logo.wine.png"
@@ -910,7 +1446,8 @@ img {
              class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
              loading="lazy"
              width="240"
-             height="80">
+             height="80"
+             onerror="this.style.display='none'">
       </li>
       <li class="partner-item">
         <img src="Images/african-development-bank-logo-04.png"
@@ -918,38 +1455,41 @@ img {
              class="mx-auto w-auto h-20 max-w-[240px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-300"
              loading="lazy"
              width="240"
-             height="80">
+             height="80"
+             onerror="this.style.display='none'">
       </li>
     </ul>
   </div>
 </section>
 
     <!-- How It Works Section -->
-    <section class="py-20 bg-white fade-in-section">
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden rotating-bg">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-4">How E-Yoked Works</h2>
-        <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-          Our AI-powered platform connects you with perfect partners in just three simple steps.
-        </p>
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div
-            class="feature-card fade-in-section fade-in-delay-1 p-6 bg-white rounded-xl border border-gray-100 text-center">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">How E-Yoked Works</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our AI-powered platform connects you with perfect partners in three simple steps,
+            delivering results 5x faster than traditional methods.
+          </p>
+        </div>
+        
+        <!-- Interactive feature cards -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="feature-card group hover:bg-blue-50 transition-all duration-300">
             <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl font-bold text-blue-600">1</span>
             </div>
             <h3 class="text-xl font-semibold mb-3">Create Profile</h3>
             <p class="text-gray-600">Tell us about your startup, expertise, or investment focus.</p>
           </div>
-          <div
-            class="feature-card fade-in-section fade-in-delay-2 p-6 bg-white rounded-xl border border-gray-100 text-center">
+          <div class="feature-card group hover:bg-green-50 transition-all duration-300">
             <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl font-bold text-green-600">2</span>
             </div>
             <h3 class="text-xl font-semibold mb-3">AI Matching</h3>
             <p class="text-gray-600">Our algorithms find your ideal ecosystem partners.</p>
           </div>
-          <div
-            class="feature-card fade-in-section fade-in-delay-3 p-6 bg-white rounded-xl border border-gray-100 text-center">
+          <div class="feature-card group hover:bg-purple-50 transition-all duration-300">
             <div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl font-bold text-purple-600">3</span>
             </div>
@@ -961,7 +1501,7 @@ img {
     </section>
 
     <!-- Core Features Section -->
-    <section class="py-20 bg-gray-50 fade-in-section">
+    <section class="py-20 bg-gray-50 rotating-bg fade-in-section"></section>
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4">Platform Capabilities</h2>
         <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
@@ -1011,7 +1551,7 @@ img {
     </section>
 
     <!-- Testimonial Slider Section -->
-    <section class="py-20 bg-white fade-in-section">
+    <section class="py-20 bg-white fade-in-section rotating-bg">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-16">What Our Members Say</h2>
         <div class="testimonial-slider">
@@ -1057,7 +1597,7 @@ img {
                 connected us with investors who perfectly aligned with our vision."
               </p>
               <div class="flex items-center">
-                <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center">
+                <div class="w-10 h-10 bg-green-200 rounded-full flex items-center justify-center"></div>
                   <span class="text-green-700 font-bold">MK</span>
                 </div>
                 <div class="ml-3">
@@ -1073,7 +1613,7 @@ img {
     </section>
 
     <!-- Ecosystem Network Section -->
-    <section class="py-20 bg-gray-50 fade-in-section">
+    <section class="py-20 bg-gray-50 fade-in-section rotating-bg">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4">Our Ecosystem Includes</h2>
         <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
@@ -1162,7 +1702,7 @@ img {
     </section>
 
     <!-- Demo Video Section -->
-<section id="demo" class="py-12 bg-white">
+<section id="demo" class="py-12 bg-white rotating-bg">
   <!-- Use a narrower container instead of Tailwind's default .container -->
   <div class="max-w-2xl mx-auto px-4">
     <h2 class="text-2xl font-bold text-center mb-6">See E-Yoked in Action</h2>
@@ -1172,7 +1712,11 @@ img {
         src="Images/Collaboration.jpg"
         alt="E-Yoked Demo Video Thumbnail"
         class="w-full h-full object-cover object-center"
-      />
+        loading="lazy"
+        width="800"
+        height="450"
+        onerror="this.src='Images/fallback-thumbnail.jpg'"
+        onload="this.classList.add('loaded')">
       <!-- Play Button Overlay -->
       <div class="absolute inset-0 flex flex-col items-center justify-center">
         <div
@@ -1188,7 +1732,7 @@ img {
 
 
     <!-- Success Stories Section -->
-    <section class="py-20 bg-gray-50 fade-in-section">
+    <section class="py-20 bg-gray-50 fade-in-section rotating-bg">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-4">Success Stories</h2>
         <p class="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
@@ -1202,7 +1746,7 @@ img {
               months and securing $2.5M in funding.
             </p>
             <div class="flex items-center">
-              <img src="Images/mediscan.svg" alt="MediScan case study" class="w-16 h-16 rounded-full object-cover">
+              <img src="Images/mediscan.svg" alt="MediScan case study" class="w-16 h-16 rounded-full object-cover" loading="lazy" width="64" height="64" onerror="this.src='Images/default-company.png'">
               <div class="ml-4">
                 <div class="font-semibold">Read the full case study</div>
                 <a href="case-studies/mediscan.html" class="text-blue-600 text-sm hover:underline">View details
@@ -1213,12 +1757,12 @@ img {
           <div class="success-story text-white p-8 rounded-xl shadow-sm"
             style="background: linear-gradient(135deg, var(--color-primary-blue), var(--color-secondary-green));">
             <h3 class="text-2xl font-semibold mb-6">Featured Success</h3>
-            <blockquote class="mb-6 text-lg italic">
+            <blockquote class="mb-6 text-lg italic"></blockquote>
               "E-Yoked's AI matching connected us with the perfect technical partner. We integrated our solutions in
               weeks instead of months, and saw immediate market traction."
             </blockquote>
             <div class="flex items-center">
-              <img src="Images/Sarah_Johnson.webp" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
+              <img src="src/assets/images/Sarah_Johnson.webp" alt="Sarah Johnson" class="w-12 h-12 rounded-full object-cover">
               <div class="ml-3">
                 <div class="font-semibold">Sarah Johnson</div>
                 <div class="text-sm opacity-80">CEO, TechStart Innovations</div>
@@ -1263,7 +1807,7 @@ img {
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section py-24 bg-gray-50 fade-in-section">
+    <section id="contact" class="contact-section py-24 bg-gray-50 fade-in-section rotating-bg">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-8">
           <div class="md:col-span-2 contact-info bg-blue-900 text-white p-8 rounded-l-lg">
@@ -1378,7 +1922,7 @@ img {
       <div class="grid md:grid-cols-12 gap-8">
         <div class="md:col-span-4">
           <div class="mb-6">
-            <img src="Images/eyokedicon.webp" alt="E-Yoked" class="h-10">
+            <img src="src/assets/images/eyokedicon.webp" alt="E-Yoked" class="h-10">
           </div>
           <p class="text-gray-400 mb-6">
             Empowering collaborative innovation by connecting startups, mentors, investors, and institutions through
@@ -1441,8 +1985,9 @@ img {
         </div>
         <div class="md:col-span-12 lg:col-span-12 mt-8">
           <div class="p-6 bg-gray-800 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4">Subscribe to our newsletter</h3>
-            <p class="text-gray-400 mb-4">Get the latest updates on ecosystem partnerships and innovation trends.</p>
+            <h3 class="text-xl font-semibold mb-4">Stay Updated: Subscribe to Our Newsletter</h3>
+            <p class="text-gray-400 mb-4">Get the latest insights on ecosystem partnerships and innovation trends
+              delivered straight to your inbox.</p>
             <form class="flex flex-col sm:flex-row gap-4 newsletter-form" novalidate>
               <input type="email" placeholder="Enter your email"
                 class="flex-grow p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900" required>
@@ -1803,6 +2348,147 @@ img {
     initLazyLoading();
   });
 })(); 
+</script>
+<script>
+// Counter animation
+function animateCounter(element) {
+  const target = parseInt(element.dataset.target);
+  const duration = 2000;
+  const step = target / (duration / 16);
+  let current = 0;
+  
+  const timer = setInterval(() => {
+    current += step;
+    element.textContent = Math.floor(current);
+    
+    if (current >= target) {
+      element.textContent = target;
+      clearInterval(timer);
+    }
+  }, 16);
+}
+
+// Initialize counter animations when they come into view
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter').forEach(counter => {
+  counterObserver.observe(counter);
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle image loading errors
+  const handleImageError = (img) => {
+    console.warn(`Failed to load image: ${img.src}`);
+    if (img.dataset.fallback) {
+      img.src = img.dataset.fallback;
+    }
+  };
+
+  // Add error handlers to all images
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', () => handleImageError(img));
+  });
+
+  // Preload critical images
+  const preloadImages = [
+    'Images/eyokedcompact.webp',
+    'Images/eyokedicon.svg',
+    'Images/eyokedicon.png'
+  ];
+
+  preloadImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+});
+</script>
+<script>
+// Add this JavaScript after the existing scripts
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdowns = document.querySelectorAll('.relative.group');
+  
+  dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('button[aria-haspopup="true"]');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    
+    if (!button || !menu) return;
+    
+    // Show dropdown
+    const showDropdown = () => {
+      menu.classList.remove('hidden');
+      menu.classList.remove('opacity-0');
+      menu.classList.remove('-translate-y-2');
+      button.setAttribute('aria-expanded', 'true');
+    };
+    
+    // Hide dropdown
+    const hideDropdown = () => {
+      menu.classList.add('hidden');
+      menu.classList.add('opacity-0');
+      menu.classList.add('-translate-y-2');
+      button.setAttribute('aria-expanded', 'false');
+    };
+    
+    // Toggle on button click
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.contains('hidden') ? showDropdown() : hideDropdown();
+    });
+    
+    // Handle keyboard navigation
+    button.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menu.classList.contains('hidden') ? showDropdown() : hideDropdown();
+      }
+    });
+    
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        hideDropdown();
+      }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        hideDropdown();
+      }
+    });
+  });
+});
+</script>
+<script>
+// Add this JavaScript after the existing scripts
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+  const scrollThreshold = 50;
+  
+  const updateHeaderOpacity = () => {
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+  };
+  
+  // Initial check
+  updateHeaderOpacity();
+  
+  // Listen for scroll
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(updateHeaderOpacity);
+  });
+});
 </script>
 </body>
 
